@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <title>Entrega Final</title>
+</head>
+<body class="row justify-content-center">
+    
+    
+    <div class="col-auto my-1 text-center">
+        <h2>Calcular Promedios Académicos</h2>
+        <hr>
+        <button type="button" class="btn btn-primary" onclick="agregar()">Agregar Materia</button>
+        <button type="button" class="btn btn-primary" onclick="eliminar()">Eliminar Materia</button>
+        <hr>
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-12 border border-dark" style="overflow: scroll; max-height: 60vh;">
+            <table id="Tabla1" class="table text-center">
+                <thead>
+                    <tr>
+                        <th>Materia</th>
+                        <th>Nota</th>
+                        
+                    </tr>
+                </thead>
+                <tbody id="body">
+                    <!--Datos-->
+                </tbody>
+            </table>
+                
+        </div>
+    </div>
+    <div class="text-center" style="margin-top: 2rem">
+        <h3>Nota Promedio</h3>
+        <input class="col-xs-6 col-md-2"  id="notaPromedio" type="text"/>
+        
+    </div>
+  
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.js"></script>
+    <script src="./assets/js/api.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+    "entradas" : [
+      {
+        "materia": "Matematicas",
+        "nota": 9
+      },
+      {
+        "materia": "Lengua",
+        "nota": 8
+      },
+      {
+        "materia": "Ciencias Naturales",
+        "nota": 7
+      },
+      {
+        "materia": "Ciencias Sociales",
+        "nota": 7
+      },
+      {
+        "materia": "Informatica",
+        "nota": 10
+      }
+    ]
+  }
+  
