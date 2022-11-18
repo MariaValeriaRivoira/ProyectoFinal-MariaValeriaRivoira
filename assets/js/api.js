@@ -74,7 +74,7 @@ const agregar = () => {
         if(nombreMateria != "" && nota != ""){
             let materiaNueva = new Materia(nombreMateria, nota);
             datosMostrar.push(materiaNueva);
-            localStorage.datosMostrar = JSON.stringify(datosMostrar); //guarda en local storage
+            localStorage.datosMostrar = JSON.stringify(datosMostrar); 
             datosAMostrar(datosMostrar);
         }else{
             Swal.fire('Llenar datos');
@@ -96,18 +96,18 @@ const agregar = () => {
         text: "Anote el nombre de la materia a borrar",
         input: "text",
         showCancelButton: true,
-        confirmButtonText: "Eliminar",
+        confirmButtonText: "Borrar",
         cancelButtonText: "Cancelar",
     })
     .then(resultado => {
         if (resultado.value) {
             Swal.fire({
-                title: '¿Confirma la elimnacion?',
+                title: '¿Confirma borrar la materia?',
                 
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Si, eliminar'
+                confirmButtonText: 'Borrar'
             })
             .then((result) => {
                 if (result.isConfirmed) {
@@ -132,12 +132,20 @@ const datosAMostrar = (arreglo=datosMostrar) => {
     limpiarTabla();
     limpiarPromedio();
     arreglo.forEach(objeto => {
-        nota = objeto.notaGuardada();
+        nota = parseFloat(objeto.notaGuardada());
+        console.log('nota', nota);
+
         suma = suma + nota;
-        promedio = suma/ arreglo.length;
-        mostrarPromedio(promedio);
+        console.log('suma', suma);
+        
         mostrarEnTabla(objeto.materia,objeto.nota);
     });
+    promedio = suma/ arreglo.length;
+        console.log('promedio', promedio);
+    
+        mostrarPromedio(promedio);
+    
+    
 };
 
 const mostrarPromedio = (promedio) =>{
@@ -152,7 +160,7 @@ const mostrarEnTabla = (materia, nota) =>{
 };
 
 const limpiarPromedio = () => {
-    document.getElementById('notaPromedio').value = ' ';
+    document.getElementById('notaPromedio').value = '';
 }
 
 const limpiarTabla = () => {
